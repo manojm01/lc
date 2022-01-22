@@ -3,7 +3,7 @@ class Solution {
         int n = a.length;
         Stack<Integer> s = new Stack<>();
         int ans[] = new int[n];
-        for(int i:a)s.push(i);
+
         
         int x[] = new int[2*n];
         int j=0;
@@ -24,6 +24,18 @@ class Solution {
             }
             if(k==2*n)ans[i]=-1;
         }
+        //  int[] res = new int[nums.length];
+        // Stack<Integer> stack = new Stack<>();
+        // for (int i = 2 * nums.length - 1; i >= 0; --i) {
+        //     while (!stack.empty() && nums[stack.peek()] <= nums[i % nums.length]) {
+        //         stack.pop();
+        //     }
+        //     res[i % nums.length] = stack.empty() ? -1 : nums[stack.peek()];
+        //     stack.push(i % nums.length);
+        // }
+        // return res;
+        // *******************************************************
+        // for(int i:a)s.push(i);
         // while(s.size()!=0 && i>=0){
         //     while(s.size()!=0 && s.peek()<=a[i]){
         //         s.pop();
