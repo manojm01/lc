@@ -14,7 +14,7 @@ class Solution {
               maxl = Math.max(maxl,i+1-start);
               h.put(a[i],i);
           }
-           maxl = Math.max(maxl,n-start);   
+            
           return maxl;
     }
 }
