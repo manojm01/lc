@@ -14,7 +14,7 @@ public:
         sort(f.begin(),f.end());
         int c=0;
         
-        do{
+        while(k>0){
          k = k-f[c];
             if(k>=0){
                 c++;
@@ -22,7 +22,7 @@ public:
             else{
                 break;
             }
-        }while(k>0);
+        }
         return ms-c;
     }
 };
