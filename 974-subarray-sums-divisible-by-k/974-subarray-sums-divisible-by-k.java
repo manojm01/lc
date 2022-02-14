@@ -1,6 +1,9 @@
 class Solution {
     public int subarraysDivByK(int[] a, int k) {
         int n = a.length;
+        
+        // if sum(0,i)%k==sum(0,j)%k, then sum(i+1,j)%k==0;
+        
         HashMap<Integer,Integer> h = new HashMap<>();
         int ans = 0;
         int sum = 0;
