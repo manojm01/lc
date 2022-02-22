@@ -19,6 +19,7 @@ class Solution {
             }
         }
          l.add(new int[]{s,e});
-        return l.toArray(new int[0][]);
-    }
+        int ans[][] = l.toArray(new int[l.size()][2]);
+        return ans;
+    } 
 }
