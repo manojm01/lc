@@ -26,7 +26,7 @@ class Solution {
          boolean ss = false;
          vis[node]=1;
          
-         if(vis[s]==1&&vis[d]==1)return true;
+         // if(vis[s]==1&&vis[d]==1)return true;
              
          for(int i:adj.get(node)){
              if(vis[i]==0)
