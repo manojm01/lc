@@ -47,16 +47,34 @@ class solver
         for(int i=0;i<n;i++){
             f[i] = map.get(a[i]);
         }
-       
-        for(int i=0;i<n;i++){
-            int c = -1;
-            for(int j=i+1;j<n;j++){
-                if(f[j]>f[i]){
-                    c = a[j];
-                    break;
-                }
+        Stack<Integer> s = new Stack<>();
+        s.push(a[n-1]);
+        ans[0]=-1;
+        int in=1;
+        for(int i=n-2;i>=0;i--){
+            while(!s.isEmpty() && map.get(s.peek())<=map.get(a[i])){
+                s.pop();
             }
-            ans[i] = c;
+            if(s.isEmpty())ans[in++]=-1;
+            else ans[in++]=s.peek();
+            s.push(a[i]);
+        }
+        
+        // for(int i=0;i<n;i++){
+        //     int c = -1;
+        //     for(int j=i+1;j<n;j++){
+        //         if(f[j]>f[i]){
+        //             c = a[j];
+        //             break;
+        //         }
+        //     }
+        //     ans[i] = c;
+        // }
+        
+        for(int i=0;i<n/2;i++){
+            int t = ans[i];
+            ans[i] = ans[n-i-1];
+            ans[n-i-1] = t;
         }
         return ans;
     }
