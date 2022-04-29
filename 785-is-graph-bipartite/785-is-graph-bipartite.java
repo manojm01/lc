@@ -14,7 +14,7 @@ class Solution {
         return true;
     }
     public boolean bfs(int node,int a[],int[][] g){
-        Queue<Integer> q = new LinkedList<>();
+         Queue<Integer> q = new LinkedList<>();
         
         q.add(node);
         a[node]=1;
