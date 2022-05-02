@@ -7,6 +7,6 @@ class Solution {
             right = right & (right-1);
         }
         
-        return left&right;
+        return right;
     }
 }
