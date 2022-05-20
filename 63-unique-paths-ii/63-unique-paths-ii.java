@@ -15,7 +15,7 @@ class Solution {
     public int solve(int m,int n,int[][] a,int dp[][]){
          if(m>=0 && n>=0 && a[m][n]==1){
              System.out.println("called "+m+" "+n+" :"+dp[m][n]);
-            return 0;
+             return 0;
           }
         if(n==0 && m==0)return 1;
         if(m<0 || n<0)return 0;
@@ -23,4 +23,4 @@ class Solution {
         
         return dp[m][n]=solve(m-1,n,a,dp)+solve(m,n-1,a,dp);
     }
-}
+} 
