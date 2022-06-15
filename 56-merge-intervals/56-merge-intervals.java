@@ -1,25 +1,29 @@
 class Solution {
     public int[][] merge(int[][] a) {
-        Arrays.sort(a,(p,q)-> p[0]-q[0]);
-        
-        int n = a.length;
-
+          
         ArrayList<int[]> l = new ArrayList<>();
+        
+        Arrays.sort(a,(p,q)->p[0]-q[0]);
+        int n = a.length;
+        
         int s = a[0][0];
         int e = a[0][1];
         
-        for(int i[]:a){
-            if(e>=i[0]){
-                e = Math.max(e,i[1]);
+        for(int arr[]:a){
+            if(e>=arr[0]){
+                e = Math.max(e,arr[1]);
             }
             else{
                 l.add(new int[]{s,e});
-                s = i[0];
-                e = i[1];
+                s = arr[0];
+                e = arr[1];
             }
         }
          l.add(new int[]{s,e});
-        int ans[][] = l.toArray(new int[l.size()][2]);
+        int[][] ans = new int[l.size()][2];
+        for(int i=0;i<l.size();i++){
+            ans[i] = l.get(i);
+        }
         return ans;
-    } 
+    }
 }
