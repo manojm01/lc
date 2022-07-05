@@ -119,13 +119,11 @@ class Solution
     int getCount(Node root,int l, int h)
     {
         //Your code here
-        traverse(root,l,h);
+        if(root==null)return 0;
+        if(l<=root.data && h>=root.data)ans++;
+        getCount(root.left,l,h);
+        getCount(root.right,l,h);
+        
         return ans;
-    }
-    void traverse(Node root,int l, int h){
-        if(root==null)return;
-        if(root.data>=l && h>=root.data)ans++;
-        traverse(root.left,l,h);
-        traverse(root.right,l,h);
     }
 }
