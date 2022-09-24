@@ -26,7 +26,7 @@ class Solution {
         
         if(root.left==null && root.right==null){
             if(t==root.val)
-              ans.add(new ArrayList<Integer>(temp));
+               ans.add(new ArrayList<Integer>(temp));
             return;
         }
         if(root.left!=null){
