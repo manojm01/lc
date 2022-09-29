@@ -1,22 +1,36 @@
 class Solution {
     public List<Integer> findClosestElements(int[] a, int k, int x) {
-      List<Integer> ans = new ArrayList<Integer>();
-        PriorityQueue<int[]> pq = new PriorityQueue<>((aa,b)-> aa[1]!=b[1]?b[1]-aa[1]:aa[0]-b[0]);
-        for(int i:a){
-            if(pq.size()==k){
-                if(Math.abs(x-i)<pq.peek()[1]){
-                    pq.poll();
-                    pq.add(new int[]{i,Math.abs(x-i)});
-                }
-            }else{
-                pq.add(new int[]{i,Math.abs(x-i)});
+        int n = a.length;
+        List<Integer> ans = new ArrayList<>();
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+                    
+        for(int i=0;i<k;i++){
+            pq.add(a[i]);
+        }
+        
+        for(int i=k;i<n;i++){
+            int t = pq.peek();
+            
+            if(Math.abs(t-x)>Math.abs(x-a[i])){
+                pq.poll();
+                pq.add(a[i]);
             }
         }
-        int in=0;
-        while(!pq.isEmpty()){
-            ans.add(pq.poll()[0]);
-        }
+        for(int i:pq)ans.add(i);
         Collections.sort(ans);
-        return ans;   
+        return ans;
+        
+//         if(x<a[0]){
+//             for(int i=0;i<k;i++)ans.add(a[i]);
+//             return ans;
+//         }
+//         if(x>a[n-1]){
+//             for(int i=n-k;i<=n-1;i++)ans.add(a[i]);
+//             return ans;
+//         }
+//         int ind=0;
+//         while(a[ind]!=x)ind++;
+        
+//         for()
     }
 }
